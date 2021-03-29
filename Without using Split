@@ -1,0 +1,21 @@
+String s = 'aabbcccc';
+List<String> splitList = new List<String>();
+List<Integer> charValues = new List<Integer>();
+for(Integer i=0;i<s.length();i++){
+   charValues.add(s.charAt(i));
+    splitList.add(String.fromCharArray(charValues));
+    charValues.clear();
+}
+
+Set<String> strSet = new Set<String>(splitList);
+Map<String,Integer> mapCountStore = new Map<String,Integer>();
+for(String str : strSet){
+    integer count = 0;
+    for(String str1 : splitList){
+        if(str==str1){
+            count++;
+        }
+    }
+    mapCountStore.put(str,count); 
+}
+system.debug(mapCountStore);
